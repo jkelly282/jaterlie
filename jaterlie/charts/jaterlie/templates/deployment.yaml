@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaterlie-website
+  labels:
+    app: jaterlie-website
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jaterlie-website
+  template:
+    metadata:
+      labels:
+        app: jaterlie-website
+    spec:
+      containers:
+        - name: jaterlie-website
+          image: vogon282/flask-starter:latest
+          ports:
+            - containerPort: 80

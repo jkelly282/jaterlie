@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Jaterlie</title>
+      {% else %}
+      <title>Welcome to the jaterverse </title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Jaterlie: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

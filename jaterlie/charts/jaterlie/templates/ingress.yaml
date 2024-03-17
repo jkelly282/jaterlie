@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jaterlie-website-ingress
+spec:
+  rules:
+    - host: "home-assistant.jaterlie.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: jaterlie-website
+                port:
+                  number: 8080
